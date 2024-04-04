@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export const AddPlayerForm = ({ API_URL, TEAM_API }) => {
   const [name, setName] = useState("");
@@ -6,7 +7,9 @@ export const AddPlayerForm = ({ API_URL, TEAM_API }) => {
   const [status, setStatus] = useState("field");
   const [imageUrl, setImageUrl] = useState("");
   const [teams, setTeams] = useState([]);
-  const [teamId, setTeamId] = useState("");
+  const [teamId, setTeamId] = useState(0);
+
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -23,8 +26,9 @@ export const AddPlayerForm = ({ API_URL, TEAM_API }) => {
         }),
       });
       console.log(response);
+      navigate();
     } catch (err) {
-      console.log(err);
+      console.log("DANGER: ", err, "has occurred");
     }
   };
 
@@ -34,6 +38,7 @@ export const AddPlayerForm = ({ API_URL, TEAM_API }) => {
         let fetchAPI = await fetch(TEAM_API);
         let jsonHolder = await fetchAPI.json();
         setTeams(jsonHolder.data.teams);
+        setTeamId(jsonHolder.data.teams[0].id);
       } catch (err) {
         console.log(err);
       }

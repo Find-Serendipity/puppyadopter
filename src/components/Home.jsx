@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
 import { Search } from "./Search";
 
-export function Home({ puppyData }) {
+export function Home({ puppyData, TEAM_API }) {
   const randomPuppy = puppyData[Math.floor(Math.random() * puppyData.length)];
 
   return (
     <>
-      {<Search puppyData={puppyData} />}
+      {<Search puppyData={puppyData} TEAM_API={TEAM_API} />}
 
       <h1>Congratulations to the Winner!!</h1>
       {randomPuppy && (

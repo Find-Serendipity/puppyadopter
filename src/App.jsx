@@ -45,7 +45,10 @@ function App() {
       </Link>
 
       <Routes>
-        <Route path="/" element={<Home puppyData={puppyData} />} />
+        <Route
+          path="/"
+          element={<Home puppyData={puppyData} TEAM_API={TEAM_API} />}
+        />
         <Route
           path="/allplayers"
           element={
