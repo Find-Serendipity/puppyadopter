@@ -93,7 +93,7 @@ export const AddPlayerForm = ({ API_URL, TEAM_API }) => {
             onChange={(e) => setImageUrl(e.target.value)}
           />
         </label>
-        <input type="submit" value="Add Puppy" />
+        <input id="submit" type="submit" value="Add Puppy" />
       </form>
     </>
   );

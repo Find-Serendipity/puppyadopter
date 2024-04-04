@@ -53,20 +53,20 @@ export const Search = ({ puppyData, TEAM_API }) => {
       {searchString &&
         searchResults.map((puppy) => (
           <div key={puppy.id} className="">
-            <div className="">
-              <div className="">Player Name: {puppy.name}</div>
+            <div className="searchCard">
+              <div className="searchDetails">Player Name: {puppy.name}</div>
 
-              <div className="">Player Breed: {puppy.breed}</div>
+              <div className="searchDetails">Player Breed: {puppy.breed}</div>
 
-              <div className="">On the {puppy.status}</div>
+              <div className="searchDetails">On the {puppy.status}</div>
 
-              <div className="">
+              <div className="searchDetails">
                 {puppy.teamId === null
                   ? "This player needs a team!"
                   : findTeam[puppy.teamId]}
               </div>
 
-              <div className="">
+              <div className="searchDetails">
                 <img src={puppy.imageUrl} />
               </div>
               <Link to={`/singleplayer/${puppy.id}`}>Fetch This Puppy?</Link>

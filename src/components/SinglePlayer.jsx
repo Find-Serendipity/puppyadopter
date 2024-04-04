@@ -24,24 +24,30 @@ export function SinglePlayer({ API_URL }) {
     <>
       <div>
         <div key={singlePuppyData.id} className="">
-          <div className="">
-            <div className="">Player Name: {singlePuppyData.name}</div>
+          <div className="puppyCard">
+            <div className="puppyDetails">
+              Player Name: {singlePuppyData.name}
+            </div>
 
-            <div className="">Player Breed: {singlePuppyData.breed}</div>
+            <div className="puppyDetails">
+              Player Breed: {singlePuppyData.breed}
+            </div>
 
-            <div className="">On the {singlePuppyData.status}</div>
+            <div className="puppyDetails">On the {singlePuppyData.status}</div>
 
-            <div className="">
+            <div className="puppyDetails">
               {!singlePuppyData.team
                 ? "This player needs a team!"
                 : singlePuppyData.team.name}
             </div>
 
-            <div className="">
+            <div className="puppyDetails">
               <img src={singlePuppyData.imageUrl} />
             </div>
 
-            <Link to={`/allplayers`}>Show me more puppies!</Link>
+            <div className="puppyDetails">
+              <Link to={`/allplayers`}>Show me more puppies!</Link>{" "}
+            </div>
           </div>
         </div>
       </div>

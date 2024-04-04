@@ -47,24 +47,26 @@ export function AllPlayers({ API_URL, TEAM_API, puppyData }) {
     <>
       <div>
         {puppyData.map((puppy) => (
-          <div key={puppy.id} className="">
+          <div key={puppy.id} className="puppyCard">
             <div className="">
-              <div className="">Player Name: {puppy.name}</div>
+              <div className="puppyDetails">Player Name: {puppy.name}</div>
 
-              <div className="">Player Breed: {puppy.breed}</div>
+              <div className="puppyDetails">Player Breed: {puppy.breed}</div>
 
-              <div className="">On the {puppy.status}</div>
+              <div className="puppyDetails">On the {puppy.status}</div>
 
-              <div className="">
+              <div className="puppyDetails">
                 {puppy.teamId === null
                   ? "This player needs a team!"
                   : findTeam[puppy.teamId]}
               </div>
 
-              <div className="">
+              <div className="puppyDetails">
                 <img src={puppy.imageUrl} />
               </div>
-              <Link to={`/singleplayer/${puppy.id}`}>Fetch This Puppy?</Link>
+              <div className="puppyDetails">
+                <Link to={`/singleplayer/${puppy.id}`}>Fetch This Puppy?</Link>
+              </div>
             </div>
 
             <button onClick={() => handleAdoption(puppy.id)}>Adopt?</button>

@@ -24,24 +24,24 @@ function App() {
       }
     }
     getPuppies();
-  }, [API_URL]);
+  }, []);
 
   return (
     <div className="nav">
       <Link to="/">
-        <h1>Home</h1>
+        <div className="navItem">Home</div>
       </Link>
 
       <Link to="/allplayers">
-        <h1>All Players</h1>
+        <div className="navItem">All Players</div>
       </Link>
 
       <Link to="/addplayer">
-        <h1>Add Player</h1>
+        <div className="navItem">Add Player</div>
       </Link>
 
       <Link to="/search">
-        <h1>Search</h1>
+        <div className="navItem">Search</div>
       </Link>
 
       <Routes>
@@ -53,7 +53,6 @@ function App() {
               API_URL={API_URL}
               TEAM_API={TEAM_API}
               puppyData={puppyData}
-              setPuppyData={setPuppyData}
             />
           }
         />
