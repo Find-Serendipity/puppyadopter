@@ -1,3 +1,5 @@
 # Welcome to the Bowl
 
-Pick your favorite puppy!
+Let's pick your favorite puppy to take home!
+
+https://puppyadopter.netlify.app/
