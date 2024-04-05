@@ -26,7 +26,7 @@ export const AddPlayerForm = ({ API_URL, TEAM_API }) => {
         }),
       });
       console.log(response);
-      navigate();
+      navigate("/allplayers");
     } catch (err) {
       console.log("DANGER: ", err, "has occurred");
     }
