@@ -12,6 +12,7 @@ const TEAM_API = `https://fsa-puppy-bowl.herokuapp.com/api/${CLASSID}/teams`;
 
 function App() {
   const [puppyData, setPuppyData] = useState([]);
+  const [findTeam, setFindTeam] = useState({});
 
   useEffect(() => {
     async function getPuppies() {
@@ -24,6 +25,28 @@ function App() {
       }
     }
     getPuppies();
+  }, []);
+
+  useEffect(() => {
+    async function getTeams() {
+      try {
+        let fetchAPI = await fetch(TEAM_API);
+
+        let jsonHolder = await fetchAPI.json();
+
+        const teamNames = {};
+
+        for (let i = 0; i < jsonHolder.data.teams.length; i++) {
+          const theTeam = jsonHolder.data.teams[i];
+          teamNames[theTeam.id] = theTeam.name;
+        }
+
+        setFindTeam(teamNames);
+      } catch (err) {
+        console.log(err);
+      }
+    }
+    getTeams();
   }, []);
 
   return (
@@ -56,6 +79,7 @@ function App() {
               API_URL={API_URL}
               TEAM_API={TEAM_API}
               puppyData={puppyData}
+              findTeam={findTeam}
             />
           }
         />
@@ -65,7 +89,13 @@ function App() {
         />
         <Route
           path="/search"
-          element={<Search puppyData={puppyData} TEAM_API={TEAM_API} />}
+          element={
+            <Search
+              puppyData={puppyData}
+              TEAM_API={TEAM_API}
+              findTeam={findTeam}
+            />
+          }
         />
         <Route
           path="/singleplayer/:id"

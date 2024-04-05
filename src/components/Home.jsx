@@ -8,25 +8,32 @@ export function Home({ puppyData, TEAM_API }) {
     <>
       {<Search puppyData={puppyData} TEAM_API={TEAM_API} />}
 
-      <h1>Congratulations to the Winner!!</h1>
+      <h1>Leader of the Pack</h1>
       {randomPuppy && (
-        <div key={randomPuppy.id} className="">
-          <div className="puppyCard">
-            <div className="puppyDetails">Player Name: {randomPuppy.name}</div>
-
-            <div className="puppyDetails">
-              Player Breed: {randomPuppy.breed}
+        <div key={randomPuppy.id} className="singleBox">
+          <div className="winnerCard">
+            <div className="winnerDetails">
+              You can do it {randomPuppy.name}!
             </div>
 
-            <div className="puppyDetails">On the {randomPuppy.status}</div>
-
-            <div className="puppyDetails">
-              <img src={randomPuppy.imageUrl} />
+            <div className="winnerDetails">
+              You make all {randomPuppy.breed} so proud!
             </div>
-            <div className="puppyDetails">
-              <Link to={`/singleplayer/${randomPuppy.id}`}>
-                Fetch This Puppy?
-              </Link>
+
+            <div className="winnerDetails">
+              <button className="fetchButton">
+                <Link to={`/singleplayer/${randomPuppy.id}`}>
+                  Fetch This Puppy?
+                </Link>
+              </button>
+            </div>
+
+            <div className="winnerDetails">
+              <img className="singleImage" src={randomPuppy.imageUrl} />
+            </div>
+
+            <div className="winnerDetails">
+              Currently located on the {randomPuppy.status}
             </div>
           </div>
         </div>

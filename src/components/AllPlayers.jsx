@@ -1,30 +1,7 @@
-import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
-export function AllPlayers({ API_URL, TEAM_API, puppyData }) {
-  const [findTeam, setFindTeam] = useState({});
-
-  useEffect(() => {
-    async function getTeams() {
-      try {
-        let fetchAPI = await fetch(TEAM_API);
-
-        let jsonHolder = await fetchAPI.json();
-
-        const teamNames = {};
-
-        for (let i = 0; i < jsonHolder.data.teams.length; i++) {
-          const theTeam = jsonHolder.data.teams[i];
-          teamNames[theTeam.id] = theTeam.name;
-        }
-
-        setFindTeam(teamNames);
-      } catch (err) {
-        console.log(err);
-      }
-    }
-    getTeams();
-  }, [TEAM_API]);
+export function AllPlayers({ API_URL, puppyData, findTeam }) {
+  const navigate = useNavigate();
 
   const handleAdoption = async (playerID) => {
     const confirmation = confirm(
@@ -37,6 +14,7 @@ export function AllPlayers({ API_URL, TEAM_API, puppyData }) {
         });
         const result = await response.json();
         console.log(result);
+        navigate(0);
       } catch (err) {
         console.error(err);
       }
@@ -45,10 +23,28 @@ export function AllPlayers({ API_URL, TEAM_API, puppyData }) {
 
   return (
     <>
-      <div>
+      <div className="allPlayers">
+        <h1>All Players</h1>
+      </div>
+      <div className="allPups">
         {puppyData.map((puppy) => (
-          <div key={puppy.id} className="puppyCard">
-            <div className="">
+          <div key={puppy.id} className="onePuppy">
+            <div className="puppyCard">
+              <div className="puppyDetails">
+                <img className="puppyImage" src={puppy.imageUrl} />
+              </div>
+              <div className="buttons">
+                <button className="fetchButton">
+                  <Link to={`/singleplayer/${puppy.id}`}>Fetch</Link>
+                </button>
+
+                <button
+                  className="adoptButton"
+                  onClick={() => handleAdoption(puppy.id)}
+                >
+                  Adopt
+                </button>
+              </div>
               <div className="puppyDetails">Player Name: {puppy.name}</div>
 
               <div className="puppyDetails">Player Breed: {puppy.breed}</div>
@@ -58,21 +54,11 @@ export function AllPlayers({ API_URL, TEAM_API, puppyData }) {
               <div className="puppyDetails">
                 {puppy.teamId === null
                   ? "This player needs a team!"
-                  : findTeam[puppy.teamId]}
-              </div>
-
-              <div className="puppyDetails">
-                <img src={puppy.imageUrl} />
-              </div>
-              <div className="puppyDetails">
-                <Link to={`/singleplayer/${puppy.id}`}>Fetch This Puppy?</Link>
+                  : `Go Team ${findTeam[puppy.teamId]}!`}
               </div>
             </div>
-
-            <button onClick={() => handleAdoption(puppy.id)}>Adopt?</button>
           </div>
         ))}
-        ;
       </div>
     </>
   );

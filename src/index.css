@@ -1,36 +1,252 @@
+body {
+    text-align: center;
+    background-image: url("https://cdn.midjourney.com/bee90299-b72b-4f15-b841-bac499609c75/0_0.webp");
+    background-size: 500px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+/* from addplayerform.jsx */
+form {
+    text-align: center;
+}
+
+/* from allplayers */
+button  {
+}
+
+/* from home.jsx */
+h1  {
+    font-weight: 900;
+    font-size: xx-large;
+    text-decoration: underline dashed;
+}
+
+/* from addplayerform/search */
+h2 {
+    text-decoration: underline dashed;
+}
+
 /* from app.jsx */
 .nav {
     text-align: center;
 }
 
+/* from app.jsx */
 .navItem {
     text-align: center;
 }
 
+.allPlayers {
+    background-size: 450px;
+    margin: 0 auto;
+    width: 200px;
+    border-radius: 400px;
+    backdrop-filter: blur 100px;
+    /* background-color: rgba(255, 255, 255, 0.365); */
+}
+
+.allPups {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* from home/allplayers/singleplayer */
+.onePuppy  {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 0 auto;
+    height: 400px; 
+    margin: 5px;
+    padding: 10px;
+    border: 2px solid aliceblue;
+    background-image: url("https://cdn.midjourney.com/c1098a34-cbaf-4f2f-bf1e-a97b5ca6b50d/0_2.webp");
+    background-size: 450px;
+}
+
+/* from home/allplayers/singleplayer */
+.puppyCard  {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 10px;
+    border: 2px solid aliceblue;
+}
+
+/* from home/allplayers/singleplayer */
+.puppyDetails  {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    margin: 2px;
+    color: aliceblue;
+}
+
+.singleCard {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 10px;
+}
+
+.singleBox {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 10px;
+}
+
+.singleDetails {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    padding: 2px;
+    margin: 2px;
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+}
+
+.winnerCard {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    backdrop-filter: blur(5px);
+    border-radius: 100px;
+    border: 1px solid rgba(0, 0, 0, 0.137);
+    width: auto;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.winnerDetails {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    padding: 2px;
+    margin: 2px;
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+    font-size: x-large;
+}
+
+/* from home/allplayers/singleplayer */
+.puppyImage {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 250px auto;
+    height: 200px;
+    padding: 2px;
+    margin: 2px;
+    border-radius: 400px;
+    border: 2px dotted black;
+    background-color: rgba(240, 248, 255, 0.594);
+}
+
+.buttons {
+    padding: 2px;
+    margin: 2px;
+}
+.fetchButton {
+    padding: 10px;
+    margin: 5px;
+    border-radius: 200px;}
+
+.adoptButton {
+    padding: 10px;
+    margin: 5px;
+    border-radius: 200px;}
+
+/* from home/allplayers/singleplayer */
+.singleImage {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 600px;
+    margin: 10px; 
+    padding: 10px;
+    border-radius: 400px;
+    border: 2px dotted black;
+    background-color: rgba(240, 248, 255, 0.50);
+}
+
+/* from search.jsx, outer layer */
+.searchBox  {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* from search.jsx, each search result */
+.searchResult {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 300px;
+    margin: 5px;
+    padding: 10px;
+}
+
+/* from search.jsx each line within the results */
+.searchCard {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* from search.jsx each detail within the results */
+.searchDetails {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 /* from addplayerform.jsx */
-h2
-form
-id= 
-#name {
+.name {
+    text-align: center;
+} 
 
-} breed status 
-team imageUrl
-submit
+/* from addplayerform.jsx */
+.breed  {
+    text-align: center;
+}
 
-/* from allplayers.jsx */
+/* from addplayerform.jsx */
+.status  {
+    text-align: center;
+}
 
-.puppyCard 
+/* from addplayerform.jsx */
+.team  {
+    text-align: center;
+}
 
-.puppyDetails
+/* from addplayerform.jsx */
+.imageUrl  {
+    text-emphasis: none;
+}
 
-button
-
-/* from home.jsx */
-
-h1
-
-/* from search.jsx */
-
-.searchCard
-
-.searchDetails
+/* from addplayerform.jsx */
+.submit  {
+    text-align: center;
+}

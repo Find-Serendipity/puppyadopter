@@ -22,32 +22,34 @@ export function SinglePlayer({ API_URL }) {
 
   return (
     <>
-      <div>
-        <div key={singlePuppyData.id} className="">
-          <div className="puppyCard">
-            <div className="puppyDetails">
-              Player Name: {singlePuppyData.name}
-            </div>
+      <div key={singlePuppyData.id} className="singleBox">
+        <div className="singleDetails">
+          <img className="singleImage" src={singlePuppyData.imageUrl} />
+        </div>
 
-            <div className="puppyDetails">
-              Player Breed: {singlePuppyData.breed}
-            </div>
+        <div className="singleCard">
+          <div className="singleDetails">
+            Player Name: {singlePuppyData.name}
+          </div>
 
-            <div className="puppyDetails">On the {singlePuppyData.status}</div>
+          <div className="singleDetails">
+            Player Breed: {singlePuppyData.breed}
+          </div>
 
-            <div className="puppyDetails">
-              {!singlePuppyData.team
-                ? "This player needs a team!"
-                : singlePuppyData.team.name}
-            </div>
+          <div className="singleDetails">
+            This player is on the {singlePuppyData.status}!
+          </div>
 
-            <div className="puppyDetails">
-              <img src={singlePuppyData.imageUrl} />
-            </div>
+          <div className="singleDetails">
+            {!singlePuppyData.team
+              ? "This player needs a team!"
+              : `Go Team ${singlePuppyData.team.name}!`}
+          </div>
 
-            <div className="puppyDetails">
-              <Link to={`/allplayers`}>Show me more puppies!</Link>{" "}
-            </div>
+          <div className="singleDetails">
+            <button>
+              <Link to={`/allplayers`}>See More Puppies!</Link>{" "}
+            </button>
           </div>
         </div>
       </div>

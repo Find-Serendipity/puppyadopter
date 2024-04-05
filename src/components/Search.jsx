@@ -1,31 +1,8 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-export const Search = ({ puppyData, TEAM_API }) => {
+export const Search = ({ puppyData, TEAM_API, findTeam }) => {
   const [searchString, setSearchString] = useState("");
-  const [findTeam, setFindTeam] = useState({});
-
-  useEffect(() => {
-    async function getTeams() {
-      try {
-        let fetchAPI = await fetch(TEAM_API);
-
-        let jsonHolder = await fetchAPI.json();
-
-        const teamNames = {};
-
-        for (let i = 0; i < jsonHolder.data.teams.length; i++) {
-          const theTeam = jsonHolder.data.teams[i];
-          teamNames[theTeam.id] = theTeam.name;
-        }
-
-        setFindTeam(teamNames);
-      } catch (err) {
-        console.log(err);
-      }
-    }
-    getTeams();
-  }, [TEAM_API]);
 
   const searchResults = puppyData.filter(
     (puppy) => puppy.name.toLowerCase().indexOf(searchString.toLowerCase()) >= 0
@@ -49,30 +26,38 @@ export const Search = ({ puppyData, TEAM_API }) => {
 
       <br />
 
-      <h2>Search Results</h2>
-      {searchString &&
-        searchResults.map((puppy) => (
-          <div key={puppy.id} className="">
-            <div className="searchCard">
-              <div className="searchDetails">Player Name: {puppy.name}</div>
+      {searchString && searchResults.length > 0 && <h2>Search Results</h2>}
+      <div className="searchBox">
+        {searchString &&
+          searchResults.map((puppy) => (
+            <div key={puppy.id} className="searchResult">
+              <div className="searchCard">
+                <div className="">Player Name: {puppy.name}</div>
 
-              <div className="searchDetails">Player Breed: {puppy.breed}</div>
+                <div className="searchDetails">Player Breed: {puppy.breed}</div>
 
-              <div className="searchDetails">On the {puppy.status}</div>
+                <div className="searchDetails">
+                  This player is on the {puppy.status}
+                </div>
 
-              <div className="searchDetails">
-                {puppy.teamId === null
-                  ? "This player needs a team!"
-                  : findTeam[puppy.teamId]}
+                <div className="searchDetails">
+                  {!puppy.team
+                    ? "This player needs a team!"
+                    : `Go Team ${findTeam[puppy.teamId]}!`}
+                </div>
+
+                <div className="searchDetails">
+                  <img className="" src={puppy.imageUrl} />
+                </div>
+                <button className="fetchButton">
+                  <Link to={`/singleplayer/${puppy.id}`}>
+                    Fetch This Puppy?
+                  </Link>
+                </button>
               </div>
-
-              <div className="searchDetails">
-                <img src={puppy.imageUrl} />
-              </div>
-              <Link to={`/singleplayer/${puppy.id}`}>Fetch This Puppy?</Link>
             </div>
-          </div>
-        ))}
+          ))}
+      </div>
     </>
   );
 };

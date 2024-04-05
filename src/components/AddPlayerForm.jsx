@@ -54,6 +54,7 @@ export const AddPlayerForm = ({ API_URL, TEAM_API }) => {
           Player Name:
           <input
             type="text"
+            className="name"
             id="name"
             value={name}
             onChange={(e) => setName(e.target.value)}
@@ -63,6 +64,7 @@ export const AddPlayerForm = ({ API_URL, TEAM_API }) => {
           Player Breed:
           <input
             type="text"
+            className="breed"
             id="breed"
             value={breed}
             onChange={(e) => setBreed(e.target.value)}
@@ -71,6 +73,7 @@ export const AddPlayerForm = ({ API_URL, TEAM_API }) => {
         <label>
           Playing, or Benched?
           <select
+            className="status"
             id="status"
             value={status}
             onChange={(e) => setStatus(e.target.value)}
@@ -81,7 +84,11 @@ export const AddPlayerForm = ({ API_URL, TEAM_API }) => {
         </label>
         <label>
           Choose Team:
-          <select id="team" onChange={(e) => setTeamId(e.target.value)}>
+          <select
+            className="team"
+            id="team"
+            onChange={(e) => setTeamId(e.target.value)}
+          >
             {teams.map((eachTeam) => (
               <option key={eachTeam.id} value={eachTeam.id}>
                 {eachTeam.name}
@@ -93,12 +100,13 @@ export const AddPlayerForm = ({ API_URL, TEAM_API }) => {
           Player Pic:
           <input
             type="text"
+            className="imageUrl"
             id="imageUrl"
             value={imageUrl}
             onChange={(e) => setImageUrl(e.target.value)}
           />
         </label>
-        <input id="submit" type="submit" value="Add Puppy" />
+        <input className="submit" id="submit" type="submit" value="Add Puppy" />
       </form>
     </>
   );
