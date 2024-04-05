@@ -50,22 +50,26 @@ function App() {
   }, []);
 
   return (
-    <div className="nav">
-      <Link to="/">
-        <div className="navItem">Home</div>
-      </Link>
+    <>
+      <div className="navBox">
+        <div className="navRow">
+          <Link to="/">
+            <div className="navItem">Home</div>
+          </Link>
 
-      <Link to="/allplayers">
-        <div className="navItem">All Players</div>
-      </Link>
+          <Link to="/allplayers">
+            <div className="navItem">All Players</div>
+          </Link>
 
-      <Link to="/addplayer">
-        <div className="navItem">Add Player</div>
-      </Link>
+          <Link to="/addplayer">
+            <div className="navItem">Add Player</div>
+          </Link>
 
-      <Link to="/search">
-        <div className="navItem">Search</div>
-      </Link>
+          <Link to="/search">
+            <div className="navItem">Search</div>
+          </Link>
+        </div>
+      </div>
 
       <Routes>
         <Route
@@ -102,7 +106,7 @@ function App() {
           element={<SinglePlayer API_URL={API_URL} />}
         />
       </Routes>
-    </div>
+    </>
   );
 }
 

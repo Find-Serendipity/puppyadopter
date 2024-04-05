@@ -15,11 +15,7 @@ export const Search = ({ puppyData, TEAM_API, findTeam }) => {
         type="text"
         rows="1"
         cols="35"
-        placeholder={
-          searchString.length > 0
-            ? "continue your search"
-            : "start your search here"
-        }
+        placeholder={"Which puppy do you seek?"}
         value={searchString}
         onChange={(e) => setSearchString(e.target.value)}
       ></textarea>

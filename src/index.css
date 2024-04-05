@@ -14,10 +14,6 @@ form {
     text-align: center;
 }
 
-/* from allplayers */
-button  {
-}
-
 /* from home.jsx */
 h1  {
     font-weight: 900;
@@ -30,14 +26,42 @@ h2 {
     text-decoration: underline dashed;
 }
 
+input {
+    margin: 2px;
+}
+
+select {
+    margin: 2px;
+}
+
+.navBox {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 /* from app.jsx */
-.nav {
-    text-align: center;
+.navRow {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px;
+    margin: 10px;
 }
 
 /* from app.jsx */
 .navItem {
-    text-align: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px;
+    margin: 6px;
+    backdrop-filter: blur(5px);
+    border-radius: 100px;
+    border: 1px solid rgba(0, 0, 0, 0.137);
 }
 
 .allPlayers {
@@ -96,7 +120,11 @@ h2 {
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 10px;
+    margin: 0 auto;
+    backdrop-filter: blur(5px);
+    border-radius: 100px;
+    border: 1px solid rgba(0, 0, 0, 0.137);
+    width: 450px;
 }
 
 .singleBox {
@@ -115,7 +143,7 @@ h2 {
     padding: 2px;
     margin: 2px;
     color: rgb(0, 0, 0);
-    font-weight: 600;
+    font-weight: 700;
 }
 
 .winnerCard {
@@ -221,32 +249,69 @@ h2 {
     justify-content: center;
 }
 
+.formBox {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    backdrop-filter: blur(5px);
+    border-radius: 100px;
+    border: 1px solid rgba(0, 0, 0, 0.137);
+    width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
 /* from addplayerform.jsx */
 .name {
-    text-align: center;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
 } 
 
 /* from addplayerform.jsx */
 .breed  {
-    text-align: center;
-}
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+} 
 
 /* from addplayerform.jsx */
 .status  {
-    text-align: center;
-}
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+} 
 
 /* from addplayerform.jsx */
 .team  {
-    text-align: center;
-}
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+} 
 
 /* from addplayerform.jsx */
 .imageUrl  {
-    text-emphasis: none;
-}
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+} 
 
 /* from addplayerform.jsx */
-.submit  {
-    text-align: center;
-}
+.submit {
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+} 

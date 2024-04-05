@@ -47,8 +47,8 @@ export function SinglePlayer({ API_URL }) {
           </div>
 
           <div className="singleDetails">
-            <button>
-              <Link to={`/allplayers`}>See More Puppies!</Link>{" "}
+            <button className="buttons fetchButton">
+              <Link to={`/allplayers`}>See More Puppies?</Link>{" "}
             </button>
           </div>
         </div>

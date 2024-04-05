@@ -49,31 +49,28 @@ export const AddPlayerForm = ({ API_URL, TEAM_API }) => {
   return (
     <>
       <h2>Add Player:</h2>
-      <form onSubmit={handleSubmit}>
-        <label>
+      <form className="formBox" onSubmit={handleSubmit}>
+        <label className="name">
           Player Name:
           <input
             type="text"
-            className="name"
             id="name"
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
         </label>
-        <label>
+        <label className="breed">
           Player Breed:
           <input
             type="text"
-            className="breed"
             id="breed"
             value={breed}
             onChange={(e) => setBreed(e.target.value)}
           />
         </label>
-        <label>
+        <label className="status">
           Playing, or Benched?
           <select
-            className="status"
             id="status"
             value={status}
             onChange={(e) => setStatus(e.target.value)}
@@ -82,13 +79,9 @@ export const AddPlayerForm = ({ API_URL, TEAM_API }) => {
             <option value="field">Playing</option>
           </select>
         </label>
-        <label>
+        <label className="team">
           Choose Team:
-          <select
-            className="team"
-            id="team"
-            onChange={(e) => setTeamId(e.target.value)}
-          >
+          <select id="team" onChange={(e) => setTeamId(e.target.value)}>
             {teams.map((eachTeam) => (
               <option key={eachTeam.id} value={eachTeam.id}>
                 {eachTeam.name}
@@ -96,17 +89,18 @@ export const AddPlayerForm = ({ API_URL, TEAM_API }) => {
             ))}
           </select>
         </label>
-        <label>
+        <label className="imageUrl">
           Player Pic:
           <input
             type="text"
-            className="imageUrl"
             id="imageUrl"
             value={imageUrl}
             onChange={(e) => setImageUrl(e.target.value)}
           />
         </label>
-        <input className="submit" id="submit" type="submit" value="Add Puppy" />
+        <div className="submit">
+          <input id="submit" type="submit" value="Add Puppy" />
+        </div>
       </form>
     </>
   );

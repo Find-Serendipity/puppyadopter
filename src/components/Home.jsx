@@ -33,7 +33,7 @@ export function Home({ puppyData, TEAM_API }) {
             </div>
 
             <div className="winnerDetails">
-              Currently located on the {randomPuppy.status}
+              Currently located on the {randomPuppy.status}!
             </div>
           </div>
         </div>
