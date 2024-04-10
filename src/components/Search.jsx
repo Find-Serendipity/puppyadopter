@@ -1,7 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
-export const Search = ({ puppyData, TEAM_API, findTeam }) => {
+export const Search = ({ puppyData, findTeam }) => {
   const [searchString, setSearchString] = useState("");
 
   const searchResults = puppyData.filter(
